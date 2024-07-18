@@ -1,0 +1,30 @@
+{
+    "name": "felipehenrique/ecommerce",
+    "description": "Um projeto de e-commerce usando PHP",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        },
+        "files": [
+            "app/config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Felipe H de O S Bonfim",
+            "email": "win2016_br@outlook.com",
+            "role": "Developer",
+            "homepage": "https://likecoder.com.br/"
+        }
+    ],
+    "require": {
+        "league/plates": "^3.5",
+        "coffeecode/datalayer": "^1.1.2",
+        "mercadopago/dx-php": "2.3.0"
+    }
+}
