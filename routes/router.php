@@ -36,13 +36,16 @@ $router = [
         "/admin/recovery"  => function() { return load("CoreController", "recovery"); },
         "/admin/home"      => function() { return load("CoreController", "home"); },
         "/admin/logout"    => function() { return load("CoreController", "logout"); },
-        // "/payments"    => function() { return load("PaymentsController", "index"); },
-        // "/payments/notification" => function() { return load("PaymentsController", "notification"); },
+        "/payments"        => function() { return load("PaymentsController", "index"); },
+        "/payments/failure" => function() { return load("PaymentsController", "failure"); },
+        "/payments/failure" => function() { return load("PaymentsController", "failure"); },
     ],
 
     "POST" => [
+        "/cart"            => function() { return load("EcommerceController", "cart"); },
         "/admin/login"     => function() { return load("CoreController", "index"); },
         "/admin/register"  => function() { return load("CoreController", "register"); },
+        "/payments/notification" => function() { return load("PaymentsController", "notification"); }
         // "/address/create" => function() { return load("AddressController", "create"); },
     ]
 ];

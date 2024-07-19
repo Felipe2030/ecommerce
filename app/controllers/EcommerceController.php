@@ -22,8 +22,31 @@ class EcommerceController
 
     public function cart($params)
     {
-        $products = ["","","","","","","","","","","",""];
-        return Controller::view('ecommerce/cart', array("products" => $products));
+        session_start();
+
+        $products = isset($_SESSION["products"]) ? $_SESSION["products"] : [];
+
+        // Verifique se a requisição é do tipo GET
+        if ($_SERVER["REQUEST_METHOD"] === "GET") {
+            // Verifique se o parâmetro "remove" está definido
+            if (isset($params->remove)) {
+                // Remova o produto da sessão com base no índice fornecido
+                $indexToRemove = (int)$params->remove;
+                if (isset($_SESSION["products"][$indexToRemove])) {
+                    unset($_SESSION["products"][$indexToRemove]);
+                    // Reindexa o array após remoção
+                    $_SESSION["products"] = array_values($_SESSION["products"]);
+                }
+            } 
+
+            // Atualiza a variável $products para refletir a sessão
+            $products = $_SESSION["products"];
+            
+            // Renderiza a view com os produtos atualizados
+            return Controller::view('ecommerce/cart', ['products' => $products]);
+        } else {
+            $_SESSION["products"][] = $params;
+        }
     }
 
     public function about($params)
@@ -39,7 +62,7 @@ class EcommerceController
 
     public function product($params)
     {
-        $products = ["","","","","","","","","","","",""];
+        $products = ["","","","","","","","","","","","",""];
         return Controller::view('ecommerce/product', array("products" => $products));
     }
 

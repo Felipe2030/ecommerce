@@ -83,11 +83,14 @@
                         </svg>
                      </a>
                   </li>
-                  <form class="form-inline">
-                     <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                     <i class="fa fa-search" aria-hidden="true"></i>
-                     </button>
-                  </form>
+                  <div class="search-container">
+                           <button class="btn search-btn">
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <form class="form-inline" action="/product" method="GET">
+                              <input type="text" class="search-input" placeholder="Search for products..." name="search">
+                        </form>
+                  </div>
                   <li class="form-inline <?=($_SERVER["REQUEST_URI"] === "/login") ? "active" : "";?>">
                      <a class="btn my-2 my-sm-0"  href="/login">
                      <i class="fa fa-user" aria-hidden="true"></i>
@@ -98,4 +101,11 @@
          </nav>
       </div>
    </header>
+
+   <script>
+       document.querySelector('.search-btn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            document.querySelector('.search-container').classList.toggle('active');
+        });
+   </script>
    <!-- end header section -->

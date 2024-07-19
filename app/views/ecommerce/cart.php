@@ -27,14 +27,15 @@
             </div>
             <div class="row">
          <?php 
-            foreach ($products as $key => $product): 
-            $key++;
+         if(isset($products)):
+            foreach ($products as $key => $product):
+               $nu = $key + 1;
          ?>
          <div class="col-sm-6 col-md-4 col-lg-4">
             <div class="box">
                <div class="option_container">
                   <div class="options">
-                     <a href="" class="option1">
+                     <a href="/cart?remove=<?=$key?>" class="option1">
                      Remove To Cart
                      </a>
                      <a href="/description?id_products=<?=$key?>" class="option2">
@@ -43,7 +44,7 @@
                   </div>
                </div>
                <div class="img-box">
-                  <img src="<?=url("/assets/images/p".$key.".png")?>" alt="">
+                  <img src="<?=url("/assets/images/p".$nu.".png")?>" alt="">
                </div>
                <div class="detail-box">
                   <h5>
@@ -55,10 +56,13 @@
                </div>
             </div>
          </div>
-         <?php endforeach; ?>
+         <?php 
+          endforeach;
+          endif;
+          ?>
       </div>
             <div class="btn-box">
-               <a href="">
+               <a  href="/payments">
                Pay All products
                </a>
             </div>

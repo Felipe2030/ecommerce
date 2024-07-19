@@ -17,10 +17,22 @@ class PaymentsController
        $preference = new Preference();
        $item = new Item();
 
-       $item->title       = "Camiseta";
-       $item->quantity    = 1;
-       $item->unit_price  = (double)1;
-       $preference->items = array($item);
+       session_start();
+
+        if (isset($_SESSION['products']) && is_array($_SESSION['products'])) {
+            for ($i = 0; $i < count($_SESSION['products']); $i++) {
+              $product = $_SESSION['products'][$i];
+              $item->title       = "Camiseta";
+              $item->quantity    = 10;
+              $item->unit_price  = (double)1;
+              $data[] = $item;
+            }
+        } else {
+           echo "No products in the session.";
+        }
+
+        $preference->items = $data;
+     
 
        $preference->back_urls = array(
             "success" => "http://localhost:8080/payments/success",
@@ -33,7 +45,9 @@ class PaymentsController
        $preference->save();
 
        $link = $preference->init_point;
-       echo $link;
+
+       header('Location: '. $link);
+       exit;
     }
 
     public function notification($params) 
@@ -61,5 +75,11 @@ class PaymentsController
         curl_close($curl);
         echo "<pre>";
         var_dump ($payment_Info);
+    }
+
+    public function failure($params)
+    {
+        header('Location: /cart');
+        exit;
     }
 }
