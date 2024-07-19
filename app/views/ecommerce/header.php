@@ -2,33 +2,33 @@
    <header class="header_section">
       <div class="container">
          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
+            <a class="navbar-brand" href="/"><img width="250" src="<?=url("assets/images/logo.png" ); ?>" alt="#" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav">
-                  <li class="nav-item active">
+                  <li class="nav-item <?=($_SERVER["REQUEST_URI"] === "/") ? "active" : "";?>">
                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown <?=($_SERVER["REQUEST_URI"] === "/about" || $_SERVER["REQUEST_URI"] === "/testimonial") ? "active" : "";?>">
                      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
                      <ul class="dropdown-menu">
                         <li><a href="/about">About</a></li>
                         <li><a href="/testimonial">Testimonial</a></li>
                      </ul>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item <?=($_SERVER["REQUEST_URI"] === "/product") ? "active" : "";?>">
                      <a class="nav-link" href="/product">Products</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item <?=($_SERVER["REQUEST_URI"] === "/blog_list") ? "active" : "";?>">
                      <a class="nav-link" href="/blog_list">Blog</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item <?=($_SERVER["REQUEST_URI"] === "/contact") ? "active" : "";?>">
                      <a class="nav-link" href="/contact">Contact</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
+                     <a class="nav-link <?=($_SERVER["REQUEST_URI"] === "/cart") ? "active" : "";?>" href="/cart">
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                            <g>
                               <g>
@@ -88,6 +88,11 @@
                      <i class="fa fa-search" aria-hidden="true"></i>
                      </button>
                   </form>
+                  <li class="form-inline <?=($_SERVER["REQUEST_URI"] === "/login") ? "active" : "";?>">
+                     <a class="btn my-2 my-sm-0"  href="/login">
+                     <i class="fa fa-user" aria-hidden="true"></i>
+                     </a>
+                  </li>
                </ul>
             </div>
          </nav>

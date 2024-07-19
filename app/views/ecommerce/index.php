@@ -1,5 +1,6 @@
 <?php $this->layout('ecommerce/master'); ?>
 
+<body>
 <div class="hero_area">
    <?php include_once "header.php"; ?>
 
@@ -26,7 +27,7 @@
                               Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
                            </p>
                            <div class="btn-box">
-                              <a href="" class="btn1">
+                              <a href="#product" class="btn1">
                               Shop Now
                               </a>
                            </div>
@@ -51,7 +52,7 @@
                               Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
                            </p>
                            <div class="btn-box">
-                              <a href="" class="btn1">
+                              <a href="#product" class="btn1">
                               Shop Now
                               </a>
                            </div>
@@ -76,7 +77,7 @@
                               Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
                            </p>
                            <div class="btn-box">
-                              <a href="" class="btn1">
+                              <a href="#product" class="btn1">
                               Shop Now
                               </a>
                            </div>
@@ -374,7 +375,7 @@
 <!-- end arrival section -->
 
 <!-- product section -->
-<section class="product_section layout_padding">
+<section id="product" class="product_section layout_padding">
    <div class="container">
       <div class="heading_container heading_center">
          <h2>
@@ -382,20 +383,24 @@
          </h2>
       </div>
       <div class="row">
+         <?php 
+            foreach ($products as $key => $product): 
+            $key++;
+         ?>
          <div class="col-sm-6 col-md-4 col-lg-4">
             <div class="box">
                <div class="option_container">
                   <div class="options">
                      <a href="" class="option1">
-                     Men's Shirt
+                     Add To Cart
                      </a>
-                     <a href="" class="option2">
-                     Buy Now
+                     <a href="/description?id_products=<?=$key?>" class="option2">
+                     View Now
                      </a>
                   </div>
                </div>
                <div class="img-box">
-                  <img src="<?=url("/assets/images/p1.png")?>" alt="">
+                  <img src="<?=url("/assets/images/p".$key.".png")?>" alt="">
                </div>
                <div class="detail-box">
                   <h5>
@@ -407,286 +412,7 @@
                </div>
             </div>
          </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p2.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $80
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p3.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $68
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p4.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $70
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p5.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $75
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p6.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $58
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p7.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $80
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p8.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p9.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p10.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p11.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Men's Shirt
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-6 col-md-4 col-lg-4">
-            <div class="box">
-               <div class="option_container">
-                  <div class="options">
-                     <a href="" class="option1">
-                     Add To Cart
-                     </a>
-                     <a href="" class="option2">
-                     Buy Now
-                     </a>
-                  </div>
-               </div>
-               <div class="img-box">
-                  <img src="images/p12.png" alt="">
-               </div>
-               <div class="detail-box">
-                  <h5>
-                     Women's Dress
-                  </h5>
-                  <h6>
-                     $65
-                  </h6>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="btn-box">
-         <a href="">
-         View All products
-         </a>
+         <?php endforeach; ?>
       </div>
    </div>
 </section>
@@ -732,7 +458,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                        <img src="<?=url("assets/images/client.jpg")?>" alt="">
                         </div>
                      </div>
                   </div>
@@ -754,7 +480,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                        <img src="<?=url("assets/images/client.jpg")?>" alt="">
                         </div>
                      </div>
                   </div>
@@ -776,7 +502,7 @@
                   <div class="img_container">
                      <div class="img-box">
                         <div class="img_box-inner">
-                           <img src="images/client.jpg" alt="">
+                        <img src="<?=url("assets/images/client.jpg")?>" alt="">
                         </div>
                      </div>
                   </div>
@@ -808,3 +534,4 @@
    </div>
 </section>
 <!-- end client section -->
+</body>

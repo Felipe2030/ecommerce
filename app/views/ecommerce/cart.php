@@ -10,7 +10,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="full">
-                     <h3>Product Grid</h3>
+                     <h3>Cart Grid</h3>
                   </div>
                </div>
             </div>
@@ -22,7 +22,7 @@
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
-                  Our <span>products</span>
+               Your <span>products</span>
                </h2>
             </div>
             <div class="row">
@@ -35,7 +35,7 @@
                <div class="option_container">
                   <div class="options">
                      <a href="" class="option1">
-                     Add To Cart
+                     Remove To Cart
                      </a>
                      <a href="/description?id_products=<?=$key?>" class="option2">
                      View Now
@@ -57,14 +57,11 @@
          </div>
          <?php endforeach; ?>
       </div>
-            < <form>
-                        <fieldset>
-                            <div class="field">
-                                <input type="email" placeholder="Enter Your Mail" name="email" />
-                                <input type="submit" value="Subscribe" />
-                            </div>
-                        </fieldset>
-                    </form>
+            <div class="btn-box">
+               <a href="">
+               Pay All products
+               </a>
+            </div>
          </div>
       </section>
       <!-- end product section -->

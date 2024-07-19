@@ -4,7 +4,7 @@ define("ROOT", "http://localhost:8080");
 
 define("DATA_LAYER_CONFIG",[
     "driver"   => "mysql",
-    "host"     => "localhost",
+    "host"     => "127.0.0.1",
     "port"     => 3306,
     "dbname"   => "db_ecommerce",
     "username" => "root",

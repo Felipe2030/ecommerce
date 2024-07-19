@@ -21,18 +21,6 @@
     <!-- responsive style -->
     <link href="<?=url("/assets/css/responsive.css")?>" rel="stylesheet" />
 </head>
-    <body>
-        <?=$this->section('content');?>
-
-        <?php include_once "footer.php"; ?>
-
-        <!-- jQery -->
-        <script src="<?=url("/assets/js/jquery-3.4.1.min.js")?>"></script>
-        <!-- popper js -->
-        <script src="<?=url("/assets/js/popper.min.js")?>"></script>
-        <!-- bootstrap js -->
-        <script src="<?=url("/assets/js/bootstrap.js")?>"></script>
-        <!-- custom js -->
-        <script src="<?=url("/assets/js/custom.js")?>"></script>
-   </body>
+    <?=$this->section('content');?>
+    <?php include_once "footer.php"; ?>
 </html>
